@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[CodeCrusade]]></title>
+  <link href="http://codecrusade.github.io/atom.xml" rel="self"/>
+  <link href="http://codecrusade.github.io/"/>
+  <updated>2015-09-23T19:41:55-05:00</updated>
+  <id>http://codecrusade.github.io/</id>
+  <author>
+    <name><![CDATA[Richard Kent Jordan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Stop Using Bootstrap]]></title>
+    <link href="http://codecrusade.github.io/blog/2015/09/02/stop-using-bootstrap/"/>
+    <updated>2015-09-02T13:41:22-05:00</updated>
+    <id>http://codecrusade.github.io/blog/2015/09/02/stop-using-bootstrap</id>
+    <content type="html"><![CDATA[<p>TLDR: Let SCSS DRY up your markup and keep your styles where they
+belong, in your css</p>
+
+<p>You love Bootstrap. I love Bootstrap. It&rsquo;s fantasic for getting a
+site out the door quickly with some nice styling. BUT&hellip;.
+How often have you seen this uglyness?</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-10&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            Lorem Ipsum
+</span><span class='line'>        <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-2&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;ul&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;li&gt;</span>Morem Ipsum<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is nearly as bad as all the style= tags from a few years back. You
+are explicitly tying your stying to your markup and making a hard to
+maintain mess. Now when you need to change to your new design fresh from
+your new marketing team, you have a million html files that need to be
+updated to the new style. This is a serious violation of the
+<a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">Single Responsibility Principle</a></p>
+
+<p>So, how can we DRY this up and make our design more flexible and more
+accepting of change. Easy, it&rsquo;s built in.  SCSS and LESS both support syntax
+for inheriting properties. Lets see what this would look like with a bit of
+SCSS help.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='scss'><span class='line'><span class="nc">.content</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="nt">col-sm-10</span><span class="o">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.sidebar</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@extend</span> <span class="nt">col-sm-2</span><span class="o">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            Lorem Ipsum
+</span><span class='line'>        <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sidebar&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;ul&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;li&gt;</span>Morem Ipsum<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There is no need to override Bootstrap where their classes make
+sense in your code (for example row), but now you have contextual
+anchors in your markup that mean something to your applicaton
+and when the time comes for change, you only have to change the scss
+directives making changes and upgrades much easier.</p>
+]]></content>
+  </entry>
+  
+</feed>
