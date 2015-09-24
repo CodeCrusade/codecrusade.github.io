@@ -12,6 +12,9 @@ $pyg_blue: #7aa6da;
 $pyg_purple: #c397d8;
 
 .highlight {
+  table {
+    width: 100%;
+  }
   code { 
     background: $pyg_background !important; 
     padding: 16px;
