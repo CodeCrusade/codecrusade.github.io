@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/rjordan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://blog.codecrusade.org
+  * I am rjordan (https://keybase.io/rjordan) on keybase.
+  * I have a public key ASAWoA2iOa9iBaH2P0hYkR_Kh6yY4_QipIVgvi0jtubT3wo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101c67e077a098c4a3b9883a21f248ddd77cd8644390de6cc16745f5f9db791b17d0a",
+      "host": "keybase.io",
+      "kid": "012016a00da239af6205a1f63f4858911fca87ac98e3f422a48560be2d23b6e6d3df0a",
+      "uid": "026456739692946d96273b10c4f06e19",
+      "username": "rjordan"
+    },
+    "merkle_root": {
+      "ctime": 1583621554,
+      "hash": "d4cfe53f841cb1a7f09df70c8001b36bff608fc2af5f6f687f2ebb4e8beca7022db04b42995b96df0ed3a74d7fdaf7576f3a4ebdad5abe62af01e561ce4534df",
+      "hash_meta": "cd34c83e933583ef1800e88872885d8d908b9e2e288d7efc6743068849c0ded9",
+      "seqno": 15163691
+    },
+    "service": {
+      "entropy": "CkTbncGVuRU8GN1Ck/Jbh49B",
+      "hostname": "blog.codecrusade.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.2.1"
+  },
+  "ctime": 1583621563,
+  "expire_in": 504576000,
+  "prev": "9223d7d5d4b4d52938e01cb12814f998aaecf883b4b6f79edf6ef661ade050e5",
+  "seqno": 36,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgFqANojmvYgWh9j9IWJEfyoesmOP0IqSFYL4tI7bm098Kp3BheWxvYWTESpcCJMQgkiPX1dS01Sk44ByxKBT5mKrs+IO0tvee3272Ya3gUOXEIJDSOicaOcgNBMhgvPwxSwqp3kqEtvKgw/hDoNv/nrWPAgHCo3NpZ8RAV3wZgKGcMPvShrs6qd2R0NxQ+CeCx8LwC5HKXIH787Im8LNNOhYEPIQQIuimsjYemzjbSOrI7L3t10WFztQABKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJjb7BbVihy0zQCl5CnGrdDK0KSPzLbpCvrZL9Tx1XFuo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rjordan
+
+==================================================================
